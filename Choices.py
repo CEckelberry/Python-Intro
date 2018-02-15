@@ -13,4 +13,4 @@ def which_prize2(points):
     if prize:
         return "Congratulations! You have won " + prize + "!"
     else:
-        return "Oh dear, no prize this time."gi
+        return "Oh dear, no prize this time."
