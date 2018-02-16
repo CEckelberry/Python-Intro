@@ -14,7 +14,7 @@ def nearest_square(limit):
         answer += 1
     return answer**2
 
-
+#Populates a set which is an unordered list with square roots of numbers from 0 - 2000
 squares = set()
 x = 1
 while x**2 < 2000:
