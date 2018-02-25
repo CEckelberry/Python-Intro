@@ -55,40 +55,40 @@ Beatles_Discography = {"Please Please Me": 1963, "With the Beatles": 1963,
     "Let It Be": 1970}
 
 
-"""
-def most_prolific(practice_input):
 
-    temp_list = []
-    year_list = {}
-    max_years = []
-    max_number = 0
+def most_prolific(discs):
+#We will store a dictionary of years
+#and number of albums per year
     years = {}
-
-#Store the years in a dictionary and then the total # of albums released per year
-    for years in practice_input:
-        year = practice_input[years]
-        if year in year_list:
+    maxyears = []
+    maxnumber = 0
+    for disc in discs:
+        year = discs[disc]
+        if year in years:
             years[year] += 1
         else:
             years[year] = 1
 
+#find the year in which the maximum
+#number of albums was published
+#there are more elegant ways of accomplishing this,
+#but the code below works
     for year in years:
-        if year_list[year] > max_number:
-            max_years.append(year)
-            max_number = year_list[year]
-        elif year_list[year] == max_number and not (year in max_years):
-            max_years.append[year]
-    if (len(max_years == 1)):
-        return max_years[0]
+        if years[year] > maxnumber:
+            maxyears=[]
+            maxyears.append(year)
+            maxnumber = years[year]
+        elif years[year] == maxnumber and not (year in maxyears):
+            maxyears.append(year)
+    if (len(maxyears) == 1):
+        return maxyears[0]
     else:
-        return max_years
-
-
+        return maxyears
 
 
 print(most_prolific(Beatles_Discography))
 
-"""
+
 
 
 monthly_takings = {'January': [54, 63], 'February': [64, 60], 'March': [63, 49],
@@ -98,27 +98,22 @@ monthly_takings = {'January': [54, 63], 'February': [64, 60], 'March': [63, 49],
 
 
 
-
-
-
-
-def total_takings(monthly_input):
-    for z in monthly_input:
-        turns = 0
-        total_array = []
-        final_array = []
-        while turns < len(monthly_input):
-
-            #print(len(monthly_input))
-            total_array = total_array.append(print(monthly_input.values()))
-            print("You are in the loop")
-            turns += 1
-            return final_array, total_array
-
-
-
-
+def total_takings(monthly_takings):
+    #total is used to sum up the monthly takings
+    total = 0
+    for month in monthly_takings.keys():
+        #I use the Python function sum to sum up over
+        #all the elements in a list
+        total = total + sum(monthly_takings[month])
+    return total
 
 
 print(total_takings(monthly_takings))
+
+
+
+
+
+
+
 
